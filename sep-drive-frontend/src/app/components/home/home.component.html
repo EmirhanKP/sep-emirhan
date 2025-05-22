@@ -1,0 +1,61 @@
+<div class="home-container">
+  <header class="header">
+    <div class="logo">
+      <h1>SEP-Drive</h1>
+    </div>
+    <nav class="navigation">
+      <a routerLink="/profile" class="nav-link">Profil</a>
+      <button (click)="logout()" class="logout-btn">Ausloggen</button>
+    </nav>
+  </header>
+
+  <section class="welcome-section">
+    <h2>Willkommen, {{ username }}!</h2>
+    <p>Was möchtest du heute tun?</p>
+  </section>
+
+  <section class="main-actions">
+    <div class="customer-actions" *ngIf="isCustomer">
+      <div class="action-card">
+        <h3>🚗 Fahrt anfordern</h3>
+        <p>Erstelle eine neue Fahrtanfrage und finde einen Fahrer.</p>
+        <a routerLink="/request-ride" class="action-link">Fahrtanfrage erstellen</a>
+      </div>
+      <div class="action-card">
+        <h3>✅ Aktive Fahrtanfragen</h3>
+        <p>Sieh dir deine aktiven Fahrtanfragen an.</p>
+        <a routerLink="/active-request" class="action-link">Aktive Anfragen ansehen</a>
+      </div>
+    </div>
+
+    <div class="action-card">
+      <h3>🔎 Nach Nutzern suchen</h3>
+      <p>Hier kannst du nach anderen Usern suchen, und ihre Informationen abrufen.</p>
+      <a routerLink="/user-search" class="action-link">Suchen</a>
+    </div>
+
+    <div class="driver-actions" *ngIf="isDriver">
+      <div class="action-card">
+        <h3>📋 Verfügbare Fahrtanfragen</h3>
+        <p>Durchsuche verfügbare Fahrtanfragen und wähle eine aus.</p>
+        <a routerLink="/available-requests" class="action-link">Verfügbare Anfragen ansehen</a>
+      </div>
+      <div class="action-card">
+        <h3>🧭 Aktive Fahrt</h3>
+        <p>Verfolge deine aktuelle Fahrt, falls du eine angenommen hast.</p>
+        <a routerLink="/active-request" class="action-link">Aktive Fahrt ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="info-card">
+      <h3>Über SEP-Drive</h3>
+      <p>
+        SEP-Drive ist eine Mitfahr-App, bei der Kunden Fahrtanfragen erstellen und
+        Fahrtangebote von Fahrern erhalten können. Wir übernehmen die Routenplanung
+        und bieten eine kartenbasierte Visualisierung für alle Fahrten.
+      </p>
+    </div>
+  </section>
+</div>
